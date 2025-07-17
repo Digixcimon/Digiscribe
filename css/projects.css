@@ -1,0 +1,44 @@
+.project-title {
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 100px;
+}
+
+.thumbnail {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.image-container {
+    
+    
+    max-width: 800px; /* Set a max width for the image container */
+    height: 550px; /* Set a fixed height for the image container */
+    background-color: white; /* Optional: Set a background color */
+    border-radius: 1rem; /* Rounded corners */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+    transition: all 0.3s ease; /* Optional: Add transition for smoothness */
+}
+
+.enlarged-image {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+    }
+    .thumbnail-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,143 @@
+/* === PHONE CSS FOR ALL HEADER============================================= */
+/* === Off‑canvas slide‑in menu =================================== */
+@media (max-width: 991.98px) {                 /* < lg breakpoint */
+    .navbar-menu {
+        position: fixed;                       /* detach from flow          */
+        top: 90px;                             /* same as header height     */
+        left: 0;
+        width: 250px;                          /* set the sidebar width     */
+        max-height: calc(100vh - 90px);        /* stay within viewport      */
+        overflow-y: auto;                      /* scroll links if many      */
+        background: var(--header-bg-scroll);   /* the light blue you picked */
+        transform: translateX(-100%);          /* hidden by default         */
+        transition: transform 0.25s ease-out;
+        z-index: 999;                          /* above page content        */
+        padding: 1rem 0;                       /* breathing room            */
+        box-shadow: 2px 0 6px rgba(0,0,0,.1);
+    }
+    .navbar-menu.open {                        /* JS toggles this */
+        transform: translateX(0);
+    }
+    /* Nice readable links on blue */
+    .navbar-menu .nav-link { 
+        color:#333; 
+    }
+    .navbar-menu .nav-link:hover { 
+        color:#007bff; 
+    }
+    .navbar-toggler { font-size: .85rem; padding: .25rem .5rem; }
+    /* 5. Slide‑in drawer */
+    .navbar-menu {
+        top: 79px;                               /* start just under header */
+        max-width: 130px;                            /* slimmer than before     */
+        max-height: calc(100svh - 45px);
+        padding: .4rem 0;
+}
+}
+/*  === HEADER ========================================================= */
+@media (max-width: 500px) {
+    /* 1. Header bar & body offset */
+    header { 
+        height: 78px; 
+        padding-bottom: 5px; 
+    }
+    body   { 
+        padding-top: 10px; 
+    }
+    /* 2. Keep items at extremes: logo left, toggler right */
+    .header-content { justify-content: space-between; }
+    /* 3. Logo size */
+    .logo img { max-height: 20px; }
+    /* 4. Toggler touch target (optional, smaller icon) */
+    .carousel-item{
+        height: 400px;
+    }
+    
+    }
+
+    /* ↓↓↓  Tablet 768 px and below  ↓↓↓ */
+@media (max-width: 768px) {
+  .custom-caption h2 { font-size: 2rem; }
+  .custom-caption p  { font-size: 1.1rem; }
+  .custom-caption .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* ↓↓↓  Mobile 480 px and below  ↓↓↓ */
+@media (max-width: 480px) {
+  .custom-caption h2 { font-size: 1.5rem; }
+  .custom-caption p  { font-size: 0.95rem; }
+  .custom-caption .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
+
+/* === PHONE CSS FOR SERVICES =========================================================== */
+@media(max-width:480px){
+  /* Hero stacks vertically */
+  .hero{padding:80px 6% 60px;flex-direction:column;text-align:center;gap:40px}
+  .hero__title{font-size:2rem}
+  .hero__text{font-size:.9rem}
+  .hero__image{flex:none;width:100%;box-shadow:none}
+  
+  /* Grid becomes single column */
+  .card-grid{margin:0;grid-template-columns:1fr}
+  .card{grid-column:span 1;width:100%;height:380px}
+  .card-img img{height:200px}
+  .card-info{inset:200px 0 0 0;height:180px;padding:18px}
+}
+ 
+
+/* === AWARD SECTION============ */
+@media (max-width: 576px){            /* phones: shorter and stacked   */
+  .award-rect,
+  .award-square{ height: 220px; }
+}
+
+/* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery {
+                gap: 10px;
+            }
+           
+            .image-card {
+                width: 200px;
+                height: 150px;
+            }
+           
+            .image-text {
+                font-size: 0.9rem;
+            }
+           
+            .image-paragraph {
+                font-size: 0.8rem;
+            }
+        }
+
+         /* Responsive adjustments for award slider */
+        @media (max-width: 768px) {
+            .gallery {
+                gap: 10px;
+            }
+           
+            .image-card {
+                width: 200px;
+                height: 150px;
+            }
+           
+            .image-text {
+                font-size: 0.9rem;
+            }
+           
+            .image-paragraph {
+                font-size: 0.8rem;
+            }
+        }@media(max-width:600px){
+      .nav-btn{display:none}
+      .title-slide{flex:0 0 160px;font-size:1.2rem;}
+        }

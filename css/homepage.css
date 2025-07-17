@@ -1,0 +1,341 @@
+/* Hero Slider */
+        .hero-slider {
+            margin-top: 54px;
+        }
+       
+        /* Carousel image and caption */
+        .carousel-item {
+            margin-top: 5px;
+            height: 560px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+
+            
+        }
+       
+       /* === Custom Caption Styles ============================================================*/
+.custom-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: none; /* Remove default background */
+    color: white;
+}
+.carousel-item::before{
+    content:""; /* needed in order to add shadow*/
+    position:absolute; 
+    inset:0;                          /* cover entire slide */
+    background:rgba(0,0,0,0.2);      /* 45 % black tint – adjust α as needed */
+    z-index:0;                        /* sits behind caption text */
+}
+
+.carousel-item > .carousel-caption{ /* preventing words from breaking*/
+    position:relative;
+    z-index:1;
+}
+
+.custom-caption h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.custom-caption p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.custom-caption .btn {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+}
+  /* === AWARD SHOWCASE =============================================== */
+
+.award-portrait {
+    height: 700px;
+    margin-left: 150px; 
+    width: auto;
+    
+    
+     
+    
+}
+.award-card   { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+ /* ---------- Award showcase typography tweaks ---------- */
+        .award-2025 h2 {
+            font-size: clamp(2.2rem, 5vw, 3rem); /* bigger section title */
+        }
+        .award-2025 h3 {
+            font-size: clamp(1.6rem, 3.5vw, 2.25rem); /* enlarge subtitle */
+        }
+        .award-2025 p {
+            font-size: 1.125rem;               /* bump paragraph size */
+        }
+
+
+       
+        /* === FOR READ MORE CSS =============================================================*/
+        .content-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .short-text {
+            margin-bottom: 15px;
+        }
+
+
+        .read-more-btn {
+            color: #3498db;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed #3498db;
+            padding-bottom: 2px;
+        }
+
+
+        .read-more-btn:hover {
+            color: #2980b9;
+            border-bottom-color: #2980b9;
+        }
+
+
+        .full-text {
+            display: none;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+
+        .expanded .full-text {
+            display: block;
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+
+
+
+        /* === AUTOMATIC SLIDER AWARDS ============================================================== */
+    .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            overflow: hidden;
+            
+        }
+       
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+       
+        .gallery {
+            display: flex;
+            gap: 20px;
+            animation: scroll 30s linear infinite;
+            width: calc(400px * 8); /* Adjust based on number of images */
+        }
+       
+        .gallery:hover {
+            animation-play-state: paused;
+        }
+       
+        .image-card {
+            position: relative;
+            width: 280px;
+            height: 120px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+       
+        .image-card:hover {
+            transform: scale(1.05);
+        }
+       
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+            filter: brightness(0.9);
+        }
+       
+        .image-card:hover img {
+            filter: brightness(0.6);
+        }
+       
+        .image-text {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 90%;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+       
+        .image-paragraph {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 90%;
+            font-size: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+       
+        .image-card:hover .image-text,
+        .image-card:hover .image-paragraph {
+            opacity: 1;
+        }
+       
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 4)); /* Adjust based on number of images */
+            }
+        }
+    
+
+/*=== CSS FOR WHY CHOOSE DIGISCRIBE==================================================================== */
+.feature-box {
+            padding: 20px;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+       
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+       
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        #main-content{
+            padding-top: 131px;
+        }
+
+
+
+
+/* Scroll to top found in bottom right */
+
+ .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+
+        .scroll-to-top:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .scroll-to-top::after {
+            content: "↑";
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+
+        .scroll-to-top:active {
+            transform: translateY(0);
+        }
+
+
+        .scroll-to-top.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+/* FAQS button found on bottom left */
+.floating-left-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-left-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}   

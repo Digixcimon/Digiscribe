@@ -1,0 +1,119 @@
+
+        /* quote */
+       .containers {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+
+        .form-container {
+            margin-top: 80px;
+            margin-bottom: 80px;
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .info-container {
+            margin-top: 80px;
+            margin-bottom: 80px;
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, #6e8efb 0%, #4a6cf7 100%);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .quote {
+            font-size: 28px;
+            margin-bottom: 20px;
+            position: relative;
+            
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        label {
+           
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            padding: 20px;
+        }
+
+
+        input,
+        select,
+        textarea {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+       
+        
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+
+        .contact-icon {
+            font-size: 22px;
+            margin-top: 3px;
+        }
+
+
+        .contact-content h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+
+        .contact-content p {
+            opacity: 0.9;
+        }
+
+
+        form .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+
+        @media (max-width: 768px) {
+            .containers {
+                flex-direction: column;
+            }
+           
+            .info-container {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+
