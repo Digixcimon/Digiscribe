@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/services.css">
+    <link rel="stylesheet" href="/css/phone.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Header with Transparent Background -->
+    <header id="mainHeader">    
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo Image -->
+                <div class="logo">
+                    <button onclick="location.href='homepage.html'"><img src="/Images/logo-digi.png" alt="Digiscribe Logo"></button>
+                </div>
+               
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+                    <button class="navbar-toggler" type="button" id="navToggleBtn">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-menu" id="navbarNav">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="homepage.html#about-button">About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="projects.html#projects">Projects</a>
+                            </li>
+
+                            <li class="nav-item">
+                               <a class="nav-link" href="services.html">Services</a>
+                            </li>
+
+                            <button id="openModal" 
+                                onclick="location.href='quote.html'" class="btn-gradient text-white px-3 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-medium text-base">Get Quote
+                            </button>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+       
+    </div>
+        <hr class="header-divider">
+    </header>
+
+<!-- ================= HERO ================= -->
+    <section class="hero">
+        <!-- Left content -->
+        <div class="hero__content">
+            <div class="tag">Transcription Corporation</div>
+            <h1 class="hero__title">Find Your Perfect<br />Services By Us</h1>
+            <p class="hero__text">
+                    At Digiscribe, our transcription services combine accuracy, efficiency, and confidentiality to deliver exceptional results for every client. Whether it’s general, medical, or legal transcription, we utilize advanced tools and trained professionals to ensure each transcript is precise and polished. <br></br><br>Our team adheres to strict security protocols, including HIPAA compliance for sensitive healthcare data, and we meet rigorous standards required in legal documentation. With fast turnaround times and a commitment to quality, we transform audio and video content into clear, reliable text that supports your goals and maintains the integrity of your information.</br>
+            </p>
+            <a href="#services-card" class="btn">Find Services</a>
+            <a href="projects.html#projects" class="btn">View Previous Projects</a>
+        </div>
+
+        <!-- Right image -->
+        <div class="hero__image">
+            <!-- Replace the src with your actual image path -->
+            <img src="/Images/media.png" alt="media" />
+            
+        </div>
+    </section>
+
+<div id="services-card"></div>
+   <hr class="section-divider">
+
+
+                <div class="col-12 text-center">
+                    <h2 class="service-title display-5 fw-semibold"><i class="fa-solid fa-desktop"></i> Browse Our Services</h2>
+                </div>
+
+    <div class="button-container">
+        <button class="button" onclick="showCards('transcription')">Transcription Services</button>
+        <button class="button" onclick="showCards('data process')">EMR DATA PROCESSING</button>
+        <button class="button" onclick="showCards('cad')">CAD SERVICES</button>
+        <button class="button" onclick="showCards('data entry')">DATA ENTRY</button>
+        <button class="button" onclick="showCards('langauge')">LANGUAGE AND MEDIA</button>
+        <button class="button" onclick="showCards('conversion')">DOCUMENT CONVERSION</button>
+    </div>
+
+    <!-- TRANSCRIPTION SERVICES CARDS -->
+    <div id="transcription-cards" class="card-container active">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/med-trans.png" alt="med-trans" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Medical Transcription</h3>
+                <p class="card-description">Digiscribe offers a reliable medical transcription services designed to support patients and healthcare professionals alike. Our company prioritizes secure transfers and ensure peace of mind for our clients.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/legal-trans.png" alt="legal-trans" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Legal Transcription</h3>
+                <p class="card-description">Our legal transcription service offers a precise and confidential conversion of audio and video recordings into written documents. We deliver transcripts that are accurate, timely and secure, while meeting all relevant legal standards.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/general-trans.png" alt="general-trans" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">General Transcription</h3>
+                <p class="card-description">Our company delivers quality transcripts by converting audio and video files into polished documents using advanced tools.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMR DATA PROCESSING CARDS -->
+    <div id="data process-cards" class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/med-summary.png" alt="med-summary" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Medical Summaries</h3>
+                <p class="card-description">A medical summary provides a comprehensive overview of a patient’s health history. It includes key information such as diagnoses, treatments and current medications. Allergies and significant test results are also documented for quick reference. This summary is crucial for healthcare providers to make informed decisions. It also ensures continuity of care and improves patient safety. Regular updates to the summary are essential as the patient's health condition is progressing.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/enrollment.png" alt="enrollment" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Patient Enrollment</h3>
+                <p class="card-description">Patient enrollment is the process of formally registering individuals in a healthcare system. It involves collecting personal details, medical history and insurance information. Consent forms for treatment and data usage are also obtained during this process. Proper enrollment ensures that patients receive appropriate care and services. It creates a foundation for effective communication between the patient and healthcare providers. Accurate enrollment is vital for records and billing.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/scheduling.png" alt="scheduling" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Appointment Scheduling</h3>
+                <p class="card-description">An appointment schedule outlines upcoming visits for patients with their healthcare providers. It includes essential details such as dates, times, and the purpose of each appointment. This schedule helps manage clinic workflow and reduces waiting times. It also serves as a reminder for patients to prepare for their visits. Effective scheduling enhances patient experience and access to care. Regular updates are necessary to accommodate changes or cancellations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAD SERVICES CARDS -->
+    <div id="cad-cards" class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/2d.png" alt="2d" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">2D Drafting</h3>
+                <p class="card-description">2D drafting involves creating flat representations of objects and structures using specialized software. This process focuses on the precise depiction of dimensions, layouts and annotations. Common applications include architectural plans, engineering schematics and technical drawings. 2D drafts serve as essential blueprints for construction and manufacturing as it provides a clear visual guide, ensuring accuracy and compliance with industry standards.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/3d.png" alt="3d" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">3D Drafting</h3>
+                <p class="card-description">3D modeling is the process of creating three-dimensional representations of objects using digital tools. This technique allows designers to visualize and manipulate their creations in a virtual space. 3D models are used in various fields including architecture, product design and animation providing a realistic perspective and design aesthetics. 3D modeling enables simulations and visualizations that aid in decision-making, encouraging creativity and innovation.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/cadd.png" alt="cad" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">CAD Conversion</h3>
+                <p class="card-description">CAD conversion involves transforming traditional paper drawings or 2D files into digital Computer-Aided Design (CAD) formats. This process enhances accessibility and usability for modern design and engineering applications. CAD conversion improves the precision of designs, allowing for easier modifications and updates. Accurate CAD conversion is essential for maintaining design integrity and meeting project timelines, streamlining workflows and reducing manual errors.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATA ENTRY CARDS -->
+    <div id="data entry-cards" class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/waybill.png" alt="waybill" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Waybill</h3>
+                <p class="card-description">A waybill is a document that provides detailed information about the shipment of goods. It typically includes details such as the sender's and recipient's addresses, a description of the cargo and tracking numbers. This document serves as a receipt and proof of shipment for both the carrier and the customer. Waybills are crucial for logistics and supply chain management, ensuring accurate tracking and delivery. They also facilitate customs clearance and regulatory compliance.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/report.png" alt="report" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Batch Proof Report</h3>
+                <p class="card-description">A batch proof report is a document used to verify the accuracy of a batch of products before final approval. It includes details such as quantities produced, quality checks and any discrepancies found during the production process. This report ensures that all items meet specified standards and are ready for distribution. Batch proof reports are vital for maintaining quality control in manufacturing and compliance with industry regulations, providing documentation for audits and traceability.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/product.png" alt="product" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Product Listing</h3>
+                <p class="card-description">A product listing is a comprehensive catalog of items available for sale, detailing features, specifications and pricing. It typically includes images, descriptions and any relevant attributes that help customers make informed purchasing decisions. Effective product listings are essential for online and offline retail as they attract potential buyers and enhance user experience. Regular updates to product listings ensure that information remains accurate and competitive.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LANGUAGE AND MEDIA CARDS -->
+    <div id="langauge-cards" class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/translation.png" alt="translation" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Translation</h3>
+                <p class="card-description">Providing text translations of dialogue and narration in films, videos or presentations. These subtitles make content accessible to diverse audiences, to enhance the understanding of viewers who speak either language. It ensures that tone and meaning are preserved, allowing for a seamless viewing experience. Subtitles can be displayed in real-time, enabling viewers to follow along with ease. This service is essential for educational materials, entertainment and communication.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/subtitle.png" alt="subtitle" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Subtitling</h3>
+                <p class="card-description">It involves converting written content from one language to another. This process requires a deep understanding of both languages and their cultural contexts. Accurate translation ensures that the original message, tone and intent are maintained. It include a variety of materials such as documents, websites and marketing content. Effective translation enhances communication and expands reach. Professional translators often utilize tools to ensure consistency and quality.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/caption.png" alt="caption" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Captioning</h3>
+                <p class="card-description">It refers to the process of creating text representations of spoken dialogue and relevant sounds in multimedia content. Captions are designed for accessibility, allowing individuals to engage with video material. They typically include not only dialogue but also descriptions of sound effects and speaker identification. Accurate captioning enhances comprehension and user experience for all viewers. It ensure that captions align with the timing and context of the audio.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOCUMENT CONVERSION CARDS -->
+    <div id="conversion-cards" class="card-container">
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/video.png" alt="video" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Video To Text</h3>
+                <p class="card-description">Video to text conversion involves transcribing spoken content from videos into written format. This process captures dialogue, narration and relevant sound descriptions to enhance accessibility. It is particularly useful for creating subtitles, transcripts for interviews and notes from presentations. This service is valuable for content creators, educators and businesses looking to improve engagement. Regular quality checks help maintain accuracy in the final text.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/audio.png" alt="audio" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Audio To Text</h3>
+                <p class="card-description">Audio to text conversion transcribes spoken words from audio recordings into written form. This process is essential for converting interviews, podcasts and lectures into text that can be easily analyzed and shared. Accurate transcription ensures that important details are not missed. This service is beneficial for researchers, journalists and anyone needing written documentation of audio content. Effective audio to text conversion enhances accessibility of content.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/Images/pdf.png" alt="pdf" />
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">PDF Conversion</h3>
+                <p class="card-description">PDF conversion refers to the process of changing documents from other formats into Portable Document Format (PDF). This ensures that files maintain their formatting and are easily shareable across different platforms. PDF conversion is essential for preserving the integrity of reports, presentations and forms. It also allows for secure sharing and easy printing without alteration. This service is used in business, education and legal sectors for creating professional documents.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li>Office Hours: Monday to Saturday <br>( 7am to 6pm ) <i class="fa-solid fa-shoe-prints"></i> <i class="fa-solid fa-shoe-prints"></i> <i class="fa-solid fa-shoe-prints"></i> <i class="fa-solid fa-shoe-prints"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Contacts</h5>
+                        <ul>
+                            <p class="mt-3"><strong><i class="fa-solid fa-envelope"></i> Email: </strong>info@digiscribeasiapacific.com<br><strong><i class="fa-solid fa-phone-flip"></i> Phone: </strong>(043) 233-2050</p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Address</h5>
+                        <ul>
+                            <a href="https://maps.app.goo.gl/GBgwn5YZyeXUB9m7A"><i class="fa-solid fa-location-dot"></i> 3rd Flr VICMAR Bldg <br>P Burgos St  <br>
+              Barangay 10 Batangas City<br>
+              Philippines 4200</a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Social Links</h5>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/MedicalTranscription"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://ph.linkedin.com/company/digiscribe-transcription-corp"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center copyright">
+                    <p class="mb-0">&copy; Digiscribe. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="/javascript/react.js"></script>
+</body>
+</html>
