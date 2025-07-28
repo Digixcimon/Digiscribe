@@ -1,0 +1,34 @@
+# Configuration files with sensitive data
+config.php
+
+# Composer dependencies
+/vendor/
+composer.lock
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+error.log
+access.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Email test files
+test_email.php
