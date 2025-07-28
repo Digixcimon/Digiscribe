@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link rel="stylesheet" href="style.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -36,8 +38,8 @@
             
             <div class="info-box">
                 <h3>How it works:</h3>
-                <p>This form will open your default email client (like Outlook, Apple Mail, etc.) with the form data pre-filled. You can then send it from your email client.</p>
-                <p><strong>Note:</strong> Direct sending to Gmail from client-side JavaScript is not possible due to security restrictions. This solution uses the mailto: protocol.</p>
+                <p>This form sends emails directly to your Gmail using EmailJS service. No backend required!</p>
+                <p><strong>Status:</strong> <span id="status">Ready to send</span></p>
             </div>
         </div>
     </div>

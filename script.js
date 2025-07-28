@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+    });
+    
     const form = document.getElementById('contactForm');
     
     form.addEventListener('submit', function(e) {
@@ -12,43 +17,55 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Validate form
         if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields');
+            updateStatus('Please fill in all fields', 'error');
             return;
         }
         
-        // Create email body
-        const emailBody = `
-Name: ${name}
-Email: ${email}
-
-Message:
-${message}
-
----
-This message was sent from the contact form.
-        `.trim();
+        // Update status
+        updateStatus('Sending email...', 'sending');
         
-        // Create mailto URL
-        // Replace YOUR_EMAIL@gmail.com with your actual Gmail address
-        const mailtoURL = `mailto:YOUR_EMAIL@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        // Send email using EmailJS
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message,
+            to_email: 'your-email@gmail.com' // Replace with your Gmail address
+        };
         
-        // Open email client
-        window.location.href = mailtoURL;
-        
-        // Show confirmation message
-        showConfirmation();
-        
-        // Reset form after a delay
-        setTimeout(() => {
-            form.reset();
-        }, 2000);
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                updateStatus('Email sent successfully!', 'success');
+                showConfirmation();
+                
+                // Reset form after a delay
+                setTimeout(() => {
+                    form.reset();
+                    updateStatus('Ready to send', 'ready');
+                }, 3000);
+            }, function(error) {
+                console.log('FAILED...', error);
+                updateStatus('Failed to send email. Please try again.', 'error');
+            });
     });
+    
+    function updateStatus(message, type) {
+        const statusElement = document.getElementById('status');
+        statusElement.textContent = message;
+        
+        // Remove existing status classes
+        statusElement.classList.remove('status-ready', 'status-sending', 'status-success', 'status-error');
+        
+        // Add appropriate class
+        statusElement.classList.add(`status-${type}`);
+    }
     
     function showConfirmation() {
         const submitBtn = document.querySelector('.submit-btn');
         const originalText = submitBtn.textContent;
         
-        submitBtn.textContent = 'Opening Email Client...';
+        submitBtn.textContent = 'Email Sent!';
         submitBtn.style.backgroundColor = '#28a745';
         
         setTimeout(() => {
