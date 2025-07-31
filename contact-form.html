@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - Send to Gmail</title>
+    <link rel="stylesheet" href="css/contact-form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Contact Us</h1>
+            <p>Fill out the form below and we'll send your message directly to our Gmail.</p>
+            
+            <form id="contactForm" action="process-form.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attachment">Attachment (optional)</label>
+                    <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png">
+                </div>
+                
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                    <label for="subscribe">Subscribe to our newsletter</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <div id="status-message" class="status-message"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const statusMessage = document.getElementById('status-message');
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(this);
+            
+            fetch('process-form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                statusMessage.className = 'status-message ' + (data.success ? 'success' : 'error');
+                statusMessage.textContent = data.message;
+                statusMessage.style.display = 'block';
+                
+                if (data.success) {
+                    this.reset();
+                }
+            })
+            .catch(error => {
+                statusMessage.className = 'status-message error';
+                statusMessage.textContent = 'An error occurred. Please try again.';
+                statusMessage.style.display = 'block';
+            })
+            .finally(() => {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
